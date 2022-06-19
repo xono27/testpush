@@ -1,7 +1,7 @@
 const webPush = require('web-push');
 const express = require("express");
 
-if (!process.env.VAPID_PUBLIC_KEY || !process.env.VAPID_PRIVATE_KEY) {
+if (!process.env.PUBLIC_KEY || !process.env.PRIVATE_KEY) {
   console.log(webPush.generateVAPIDKeys());
   return;
 }
@@ -10,7 +10,7 @@ const PUBLIC_KEY = process.env.PUBLIC_KEY
 
 const app = express();
 webPush.setVapidDetails(
-  'http://localhost:3010',
+  'https://imptestpush.herokuapp.com/',
   PUBLIC_KEY,
   PRIVATE_KEY
 );
