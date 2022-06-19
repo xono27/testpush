@@ -1,12 +1,12 @@
 const webPush = require('web-push');
 const express = require("express");
 
-// if (!process.env.VAPID_PUBLIC_KEY || !process.env.VAPID_PRIVATE_KEY) {
-//   console.log(webPush.generateVAPIDKeys());
-//   return;
-// }
-const PUBLIC_KEY = process.env.PUBLIC_KEY ||  "BBjK-zS8ETMXZ6-j39Ygb-LH36q2Q0etisbQZAyFeXgFgzvWpvOlKynFoS8rTj2yRfh1m7SWF_h0wPzy2eyyigo"
-  const PRIVATE_KEY = process.env.PRIVATE_KEY || "ngQot_OkS08XpJDcMN8jv2fF2KgeKGakcYnzfDsbGHg";
+if (!process.env.VAPID_PUBLIC_KEY || !process.env.VAPID_PRIVATE_KEY) {
+  console.log(webPush.generateVAPIDKeys());
+  return;
+}
+const PUBLIC_KEY = process.env.PUBLIC_KEY 
+  const PRIVATE_KEY = process.env.PRIVATE_KEY
 
 const app = express();
 webPush.setVapidDetails(
