@@ -19,7 +19,6 @@ navigator.serviceWorker.ready
   });
 }).then(function(subscription) {
     console.log(subscription);
-  });
 
   document.getElementById('pushnotification').onclick = function() {
     const payload = document.getElementById('notification-payload').value;
@@ -40,7 +39,7 @@ navigator.serviceWorker.ready
     });
   };
 
-// });
+});
 
 
 function urlBase64ToUint8Array(base64String) {
